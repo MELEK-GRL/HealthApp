@@ -1,12 +1,13 @@
 import { useTranslation } from "react-i18next";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const { t } = useTranslation();
+
     const handleLogin = (e) => {
         e.preventDefault();
 
@@ -51,6 +52,13 @@ const Login = () => {
                         {t("login")}
                     </button>
                 </form>
+
+                <p className="mt-4 text-center text-gray-600">
+                    Hesabınız yok mu?{" "}
+                    <Link to="/register" className="text-blue-600 hover:underline">
+                        Kayıt Ol
+                    </Link>
+                </p>
             </div>
         </div>
     );

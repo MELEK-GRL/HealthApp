@@ -4,6 +4,7 @@ import Home from "./screen/Home";
 import About from "./screen/About";
 import Login from "./screen/Login";
 import Settings from "./screen/Settings";
+import Register from "./screen/Register";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/app" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
