@@ -5,9 +5,10 @@ export default function MainLayout() {
         <>
             <header className="bg-blue-600 text-white p-4">
                 <nav className="container mx-auto flex gap-4">
-                    <Link to="/" className="hover:underline">melek Sayfa</Link>
-                    <Link to="/about" className="hover:underline">Hakkında</Link>
-                    <Link to="/contact" className="hover:underline">İletişim</Link>
+                    <Link to="/app" className="hover:underline">Ana Sayfa</Link>
+                    <Link to="/app/about" className="hover:underline">Hakkında</Link>
+                    <Link to="/app/settings" className="hover:underline">Ayarlar</Link>
+
                 </nav>
             </header>
 
