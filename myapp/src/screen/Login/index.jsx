@@ -55,7 +55,7 @@ const Login = () => {
 
                 <p className="mt-4 text-center text-gray-600">
                     <Link to="/register" className="text-blue-600 hover:underline">
-                        {t('logout')}
+                        {t('register')}
                     </Link>
                 </p>
             </div>

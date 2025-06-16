@@ -1,6 +1,7 @@
 {
     "login": "Giriş Yap",
     "logout": "Çıkış Yap",
+    "register": "Kayıt Ol",
     "username": "Kullanıcı Adı",
     "password": "Şifre",
     "submit": "Giriş",

@@ -9,7 +9,7 @@ export default function MainLayout() {
         { label: t("directiveList"), path: "/app" },
         { label: t("profile"), path: "/app/user" },
         { label: t("settings"), path: "/app/settings" },
-        { label: t("login"), path: "/login" },
+        { label: t("logout"), path: "/" },
     ];
 
     // Header ve footer yüksekliği (örnek 64px)
