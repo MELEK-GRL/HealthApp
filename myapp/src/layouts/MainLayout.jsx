@@ -1,23 +1,49 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import HamburgerMenu from "../components/HamburgerMenu";
+import { FaUserCircle } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function MainLayout() {
-    return (
-        <>
-            <header className="bg-blue-600 text-white p-4">
-                <nav className="container mx-auto flex gap-4">
-                    <Link to="/app" className="hover:underline">Ana Sayfa</Link>
-                    <Link to="/app/about" className="hover:underline">Hakkında</Link>
-                    <Link to="/app/settings" className="hover:underline">Ayarlar</Link>
+    const { t } = useTranslation();
+    const menuItems = [
+        { label: t("directiveList"), path: "/app" },
+        { label: t("profile"), path: "/app/user" },
+        { label: t("settings"), path: "/app/settings" },
+        { label: t("login"), path: "/login" },
+    ];
 
-                </nav>
+    // Header ve footer yüksekliği (örnek 64px)
+    const headerHeight = 64;
+    const footerHeight = 64;
+
+    return (
+        <div className="flex flex-col min-h-screen">
+            <header
+                className="bg-blue-600 text-white p-4 flex justify-between items-center"
+                style={{ height: `${headerHeight}px` }}
+            >
+                <HamburgerMenu menuItems={menuItems} />
+                <div className="flex items-center gap-2 cursor-pointer select-none">
+                    <FaUserCircle className="text-3xl" />
+                    <span className="text-sm font-medium">Melek Gürel</span>
+                </div>
             </header>
 
-            <main className="container mx-auto p-4 min-h-[80vh]">
-                {/* Route edilmiş sayfalar buraya render olur */}
+            <main
+                className="p-4 overflow-auto"
+                style={{
+                    height: `calc(100vh - ${headerHeight}px - ${footerHeight}px)`,
+                }}
+            >
                 <Outlet />
             </main>
 
-
-        </>
+            <footer
+                className="bg-gray-100 text-gray-700 p-4 text-center"
+                style={{ height: `${footerHeight}px` }}
+            >
+                &copy; 2025 İmageRAD - Tüm Hakları Saklıdır.
+            </footer>
+        </div>
     );
 }

@@ -1,7 +1,13 @@
 {
     "login": "Login",
+    "logout": "Logout",
     "username": "Username",
     "password": "Password",
     "submit": "Submit",
-    "required": "This field is required"
+    "required": "This field is required",
+    "directiveList": "Directive List",
+    "profile": "Profile",
+    "settings": "Settings",
+    "selectedFile": "Selected File",
+    "send": "Send"
 }

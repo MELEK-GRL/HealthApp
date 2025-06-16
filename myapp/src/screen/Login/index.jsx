@@ -19,29 +19,29 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="min-h-screen flex items-center justify-center bg-gray-100 ">
             <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
-                <h2 className="text-2xl font-semibold text-center mb-6">Giriş Yap</h2>
+                <h2 className="text-2xl font-semibold text-center mb-6">{t('login')}</h2>
                 <form onSubmit={handleLogin} className="space-y-5">
                     <div>
-                        <label className="block text-gray-700 mb-1">Kullanıcı Adı</label>
+                        <label className="block text-gray-700 mb-1">{t('username')}</label>
                         <input
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Adınızı girin"
+                            placeholder={t('username').toLowerCase()}
                         />
                     </div>
 
                     <div>
-                        <label className="block text-gray-700 mb-1">Şifre</label>
+                        <label className="block text-gray-700 mb-1">{t('password')}</label>
                         <input
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Şifrenizi girin"
+                            placeholder={t('password').toLowerCase()}
                         />
                     </div>
 
@@ -54,9 +54,8 @@ const Login = () => {
                 </form>
 
                 <p className="mt-4 text-center text-gray-600">
-                    Hesabınız yok mu?{" "}
                     <Link to="/register" className="text-blue-600 hover:underline">
-                        Kayıt Ol
+                        {t('logout')}
                     </Link>
                 </p>
             </div>

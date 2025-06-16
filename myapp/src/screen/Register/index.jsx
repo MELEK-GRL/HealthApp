@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
     const [error, setError] = useState('');
-
+    const { t } = useTranslation();
     const handleRegister = (e) => {
         e.preventDefault();
 
@@ -22,7 +23,7 @@ const Register = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
             <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
-                <h2 className="text-2xl font-semibold text-center mb-6">Kayıt Ol</h2>
+                <h2 className="text-2xl font-semibold text-center mb-6"> {t('logout')}</h2>
                 <form onSubmit={handleRegister} className="space-y-5">
                     <div>
                         <label htmlFor="username" className="block text-gray-700 mb-1 font-medium">Kullanıcı Adı</label>
@@ -71,7 +72,7 @@ const Register = () => {
                         type="submit"
                         className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-200"
                     >
-                        Kayıt Ol
+                        {t('logout')}
                     </button>
                 </form>
             </div>

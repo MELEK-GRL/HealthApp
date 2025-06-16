@@ -1,0 +1,34 @@
+import React from 'react';
+import Detail from '../../components/Detail';
+import PdfUploader from '../../components/PdfUploader';
+import { useNavigate, useParams } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
+
+const DirectiveDetail = () => {
+    const navigate = useNavigate();
+    const { id } = useParams();
+
+    return (
+        <div className='flex w-full h-full justify-between flex-col'>
+            {/* Detail component'e id prop'u ekliyoruz */}
+            <Detail id={id} />
+
+            <div className="mt-6 px-6">
+                {/* PdfUploader'a da id prop'u gönderiyoruz */}
+                <PdfUploader directiveId={id} />
+            </div>
+
+            <div className='flex w-full'>
+                <button
+                    onClick={() => navigate(-1)}
+                    className="flex items-center text-blue-600 hover:underline mb-6"
+                >
+                    <FaArrowLeft className="mr-2" />
+                    Geri Dön
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default DirectiveDetail;

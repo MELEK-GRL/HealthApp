@@ -1,7 +1,13 @@
 {
     "login": "Giriş Yap",
+    "logout": "Çıkış Yap",
     "username": "Kullanıcı Adı",
     "password": "Şifre",
     "submit": "Giriş",
-    "required": "Bu alan zorunludur"
+    "required": "Bu alan zorunludur",
+    "directiveList": "Tetkik Listesi",
+    "profile": "Profil",
+    "settings": "Ayarlar",
+    "selectedFile": "Seçilen Dosya",
+    "send": "Gönder"
 }
