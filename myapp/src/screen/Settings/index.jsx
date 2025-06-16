@@ -25,8 +25,8 @@ const Settings = () => {
     }, [message]);
 
     return (
-        <div className="flex items-center  w-full py-4">
-            <div className="bg-white rounded-2xl shadow-md p-8 w-[40%] border border-slate-200 flex flex-col gap-4  ">
+        <div className="flex items-center  w-full py-4 ">
+            <div className="bg-white rounded-2xl shadow-md px-8 py-8  xl:w-[40%] lg:w-[50%] md:w-[60%] sm:w-[80%] w-full border border-slate-200 flex flex-col gap-4  ">
                 <div className=''>
                     <h2 className="text-2xl font-bold text-gray-800">{t('languageSelection')}</h2>
                 </div>

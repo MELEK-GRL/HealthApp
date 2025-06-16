@@ -30,7 +30,7 @@ export default function MainLayout() {
             </header>
 
             <main
-                className="py-4 overflow-auto globalScreen"
+                className="py-4 overflow-auto globalScreen hide-scrollbar"
                 style={{
                     height: `calc(100vh - ${headerHeight}px - ${footerHeight}px)`,
                 }}

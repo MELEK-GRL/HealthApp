@@ -11,11 +11,8 @@ const DirectiveDetail = () => {
     const { t } = useTranslation();
     return (
         <div className='flex w-full h-full justify-between flex-col'>
-            {/* Detail component'e id prop'u ekliyoruz */}
             <Detail id={id} />
-
             <div className="mt-6 py-6">
-                {/* PdfUploader'a da id prop'u gönderiyoruz */}
                 <PdfUploader directiveId={id} />
             </div>
 

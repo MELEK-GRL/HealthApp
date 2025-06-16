@@ -4,6 +4,10 @@
 
 @layer utilities {
     .globalScreen {
-        @apply px-10;
+        @apply xl:px-10 lg:px-8 md:px-6 sm:px-4 px-3;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
     }
 }

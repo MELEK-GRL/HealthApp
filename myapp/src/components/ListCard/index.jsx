@@ -1,6 +1,4 @@
-import React from 'react';
 import { HiOutlineClipboardDocument } from 'react-icons/hi2';
-import { BsThreeDotsVertical } from 'react-icons/bs';
 import { FaUser } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
