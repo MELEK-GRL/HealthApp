@@ -9,5 +9,11 @@
     "profile": "Profile",
     "settings": "Settings",
     "selectedFile": "Selected File",
-    "send": "Send"
+    "send": "Send",
+    "delete": "Delete",
+    "pdfAdd": "Drag and drop or click to select the PDF file.",
+    "pdfWarning": "You can only upload PDF files.",
+    "pleaseSelectPDF": "Please select a PDF file first.",
+    "back": "Back",
+    "loading": "Loading"
 }

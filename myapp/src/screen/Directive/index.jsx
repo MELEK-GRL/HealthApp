@@ -147,7 +147,7 @@ const directives = [
 const DirectiveList = () => {
 
     return (
-        <div className="p-4  min-h-screen space-y-3">
+        <div className="py-4 space-y-3">
             {directives.map((item) => (
                 <ListCard key={item.id} item={item} />
             ))}

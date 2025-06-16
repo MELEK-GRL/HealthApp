@@ -17,9 +17,9 @@ export default function MainLayout() {
     const footerHeight = 64;
 
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen ">
             <header
-                className="bg-blue-600 text-white p-4 flex justify-between items-center"
+                className="bg-blue-600 text-white flex justify-between items-center globalScreen"
                 style={{ height: `${headerHeight}px` }}
             >
                 <HamburgerMenu menuItems={menuItems} />
@@ -30,7 +30,7 @@ export default function MainLayout() {
             </header>
 
             <main
-                className="p-4 overflow-auto"
+                className="py-4 overflow-auto globalScreen"
                 style={{
                     height: `calc(100vh - ${headerHeight}px - ${footerHeight}px)`,
                 }}

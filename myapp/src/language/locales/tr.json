@@ -9,5 +9,11 @@
     "profile": "Profil",
     "settings": "Ayarlar",
     "selectedFile": "Seçilen Dosya",
-    "send": "Gönder"
+    "send": "Gönder",
+    "delete": "İptal Et",
+    "pdfAdd": "PDF dosyasını sürükleyip bırakın veya tıklayarak seçin.",
+    "pdfWarning": "Sadece PDF dosyası yükleyebilirsiniz.",
+    "pleaseSelectPDF": "Lütfen önce bir PDF dosyası seçin.",
+    "back": "Geri",
+    "loading": "Yükleniyor"
 }

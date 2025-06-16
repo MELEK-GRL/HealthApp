@@ -15,7 +15,7 @@ const PdfUploader = ({ directiveId }) => {
 
     const pdfFile = droppedFiles[0];
     if (pdfFile.type !== 'application/pdf') {
-      setError('Sadece PDF dosyası yükleyebilirsiniz.');
+      setError(t('pdfWarning'));
       return;
     }
     setFile(pdfFile);
@@ -31,7 +31,7 @@ const PdfUploader = ({ directiveId }) => {
     if (!selectedFile) return;
 
     if (selectedFile.type !== 'application/pdf') {
-      setError('Sadece PDF dosyası yükleyebilirsiniz.');
+      setError(t('pdfWarning'));
       return;
     }
     setFile(selectedFile);
@@ -44,7 +44,7 @@ const PdfUploader = ({ directiveId }) => {
 
   const handleUpload = async () => {
     if (!file) {
-      setError('Lütfen önce bir PDF dosyası seçin.');
+      setError(t('pleaseSelectPDF'));
       return;
     }
     setError('');
@@ -90,7 +90,7 @@ const PdfUploader = ({ directiveId }) => {
           className="hidden"
         />
         <p className="text-gray-600">
-          PDF dosyasını sürükleyip bırakın veya tıklayarak seçin
+          {t('pdfAdd')}
         </p>
       </label>
 
@@ -103,20 +103,22 @@ const PdfUploader = ({ directiveId }) => {
             className="ml-4 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
             type="button"
           >
-            İptal Et
+            {t('delete')}
           </button>
         </div>
       )}
 
-      <div className='flex justify-center'><button
-        onClick={handleUpload}
-        disabled={isUploading || !file}
-        className={`mt-4 w-[200px] px-5 py-2 rounded text-white font-semibold
+      <div className='flex justify-center'>
+        <button
+          onClick={handleUpload}
+          disabled={isUploading || !file}
+          className={`mt-4 w-[200px] px-5 py-2 rounded text-white font-semibold
           ${isUploading || !file ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
-        type="button"
-      >
-        {isUploading ? 'Yükleniyor...' : t('Gönder')}
-      </button></div>
+          type="button"
+        >
+          {isUploading ? t('loading') : t('send')}
+        </button>
+      </div>
     </div>
   );
 };
