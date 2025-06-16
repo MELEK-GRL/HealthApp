@@ -16,5 +16,8 @@
     "pdfWarning": "Sadece PDF dosyası yükleyebilirsiniz.",
     "pleaseSelectPDF": "Lütfen önce bir PDF dosyası seçin.",
     "back": "Geri",
-    "loading": "Yükleniyor"
+    "loading": "Yükleniyor",
+    "languageSelection": "Dil Seçimi",
+    "english": "İngilizce",
+    "turkish": "Türkçe"
 }

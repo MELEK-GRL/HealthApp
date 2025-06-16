@@ -16,5 +16,8 @@
     "pdfWarning": "You can only upload PDF files.",
     "pleaseSelectPDF": "Please select a PDF file first.",
     "back": "Back",
-    "loading": "Loading"
+    "loading": "Loading",
+    "languageSelection": "Language Selection",
+    "english": "English",
+    "turkish": "Turkish"
 }

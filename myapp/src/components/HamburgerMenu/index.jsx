@@ -20,7 +20,7 @@ export default function HamburgerMenu({ title = "Melek Gürel", menuItems = [] }
         <>
             <button
                 onClick={() => setOpen(true)}
-                className="text-white text-2xl focus:outline-none"
+                className="text-white text-2xl focus:outline-none "
                 aria-label="Open menu"
             >
                 <svg
@@ -35,6 +35,7 @@ export default function HamburgerMenu({ title = "Melek Gürel", menuItems = [] }
                     <path d="M3 12h18M3 6h18M3 18h18" />
                 </svg>
             </button>
+
             <div
                 ref={sidebarRef}
                 className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full"
@@ -54,7 +55,7 @@ export default function HamburgerMenu({ title = "Melek Gürel", menuItems = [] }
                             key={i}
                             to={path}
                             onClick={() => setOpen(false)}
-                            className="px-4 py-3 hover:bg-blue-100 border-b border-gray-200"
+                            className="px-4 py-3 hover:bg-blue-100 border-b border-gray-200  no-underline"
                         >
                             <span className="text-slate-500"> {label}</span>
                         </Link>
