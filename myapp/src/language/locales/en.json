@@ -4,6 +4,7 @@
     "register": "Register",
     "username": "Username",
     "password": "Password",
+    "repeat": "Repeat",
     "submit": "Submit",
     "required": "This field is required",
     "directiveList": "Directive List",

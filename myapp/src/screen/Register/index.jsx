@@ -26,20 +26,20 @@ const Register = () => {
                 <h2 className="text-2xl font-semibold text-center mb-6"> {t('register')}</h2>
                 <form onSubmit={handleRegister} className="space-y-5">
                     <div>
-                        <label htmlFor="username" className="block text-gray-700 mb-1 font-medium">Kullanıcı Adı</label>
+                        <label htmlFor="username" className="block text-gray-700 mb-1 font-medium">{t('username')}</label>
                         <input
                             id="username"
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            placeholder="Kullanıcı adınızı girin"
+                            placeholder={t('username')}
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             required
                         />
                     </div>
 
                     <div>
-                        <label htmlFor="password" className="block text-gray-700 mb-1 font-medium">Şifre</label>
+                        <label htmlFor="password" className="block text-gray-700 mb-1 font-medium">{t('password')}</label>
                         <input
                             id="password"
                             type="password"
@@ -52,7 +52,7 @@ const Register = () => {
                     </div>
 
                     <div>
-                        <label htmlFor="passwordConfirm" className="block text-gray-700 mb-1 font-medium">Şifre Tekrar</label>
+                        <label htmlFor="passwordConfirm" className="block text-gray-700 mb-1 font-medium">{t('password') + ' ' + t('repeat')}</label>
                         <input
                             id="passwordConfirm"
                             type="password"
