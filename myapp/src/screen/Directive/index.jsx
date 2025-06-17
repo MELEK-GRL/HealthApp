@@ -1,6 +1,7 @@
 
+import { useMemo, useState } from 'react';
 import ListCard from '../../components/ListCard';
-
+import { FaSearch, FaCalendarAlt } from 'react-icons/fa';
 const directives = [
     {
         id: 1,
@@ -146,11 +147,70 @@ const directives = [
 
 const DirectiveList = () => {
 
+    const [searchTerm, setSearchTerm] = useState('');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+
+    const filteredDirectives = useMemo(() => {
+        return directives.filter((item) => {
+            const lowerSearch = searchTerm.toLowerCase();
+            const matchesSearch =
+                item.title.toLowerCase().includes(lowerSearch) ||
+                item.doctor.toLowerCase().includes(lowerSearch);
+
+            const itemDate = new Date(item.date.split('.').reverse().join('-'));
+            const isAfterStart = startDate ? itemDate >= new Date(startDate) : true;
+            const isBeforeEnd = endDate ? itemDate <= new Date(endDate) : true;
+
+            return matchesSearch && isAfterStart && isBeforeEnd;
+        });
+    }, [searchTerm, startDate, endDate]);
+
     return (
-        <div className="py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-            {directives.map((item) => (
-                <ListCard key={item.id} item={item} />
-            ))}
+        <div className="p-4">
+            {/* Arama ve tarih filtreleme alanı */}
+            <div className="grid gap-4 grid-cols-1 md:grid-cols-3 mb-6">
+                <div className="relative">
+                    <FaSearch className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400" />
+                    <input
+                        type="text"
+                        placeholder="Doktor veya form ara..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="w-full pl-10 pr-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-sm"
+                    />
+                </div>
+                <div className="relative">
+                    <FaCalendarAlt className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400" />
+                    <input
+                        type="date"
+                        value={startDate}
+                        onChange={(e) => setStartDate(e.target.value)}
+                        className="w-full pl-10 pr-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-sm"
+                    />
+                </div>
+                <div className="relative">
+                    <FaCalendarAlt className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400" />
+                    <input
+                        type="date"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
+                        className="w-full pl-10 pr-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-sm"
+                    />
+                </div>
+            </div>
+
+            {/* Liste */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                {filteredDirectives.map((item) => (
+                    <ListCard key={item.id} item={item} />
+                ))}
+                {filteredDirectives.length === 0 && (
+                    <p className="col-span-full text-center text-gray-500 mt-4">
+                        Eşleşen sonuç bulunamadı.
+                    </p>
+                )}
+            </div>
         </div>
     );
 };
