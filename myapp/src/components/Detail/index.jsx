@@ -12,23 +12,25 @@ const Detail = ({ id }) => {
     return (
         <div className='flex w-full'>
             <div className="p-6 bg-white rounded-xl shadow-md  w-full border border-slate-100">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                    {directive.title}
-                </h2>
-                <div className="flex items-center mb-3 text-gray-700">
+                <div className='mb-2'>
+                    <span className="text-lg text-gray-700 font-semibold">
+                        {directive.title}
+                    </span>
+                </div>
+                <div className="flex items-center mb-2 text-gray-700">
                     <FaUserMd className="mr-2 text-blue-600" />
-                    <span className="font-medium">Doktor:</span>
-                    <span className="ml-2">{directive.doctor}</span>
+                    <span className="text-sm text-gray-700">Doktor:</span>
+                    <span className="text-sm text-gray-700 ml-2">{directive.doctor}</span>
                 </div>
                 <div className="flex items-center mb-2 text-gray-600">
                     <FaClock className="mr-2 text-green-600" />
-                    <span className="font-medium">Saat:</span>
-                    <span className="ml-2">{directive.time}</span>
+                    <span className="text-sm text-gray-700">Saat:</span>
+                    <span className="text-sm text-gray-700 ml-2">{directive.time}</span>
                 </div>
                 <div className="flex items-center text-gray-600">
                     <FaCalendarAlt className="mr-2 text-purple-600" />
-                    <span className="font-medium">Tarih:</span>
-                    <span className="ml-2">{directive.date}</span>
+                    <span className="text-sm text-gray-700">Tarih:</span>
+                    <span className="text-sm text-gray-700 ml-2">{directive.date}</span>
                 </div>
             </div>
         </div>

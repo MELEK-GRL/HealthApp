@@ -39,8 +39,10 @@ const User = () => {
     return (
         <div className='flex flex-col'>
             <BackButton text={t('back')} onClick={() => navigate(-1)} />
-            <div className="w-full sm:w-[70%] md:w-[50%] lg:w-[45%] xl:w-[35%] p-6 bg-white rounded shadow border border-slate-200">
-                <h1 className="text-2xl font-bold mb-4">{t('profile') + ' ' + t('detail')}</h1>
+            <div className="w-full sm:w-[70%] md:w-[50%] lg:w-[45%] xl:w-[35%] p-4 bg-white rounded shadow border border-slate-200">
+                <div className='mb-3'>
+                    <span className="text-lg font-bold ">{t('profile') + ' ' + t('detail')}</span>
+                </div>
                 <div className="mb-2">
                     <span className="text-md text-gray-700 font-semibold">{t('name') + ' :'}</span > <span className="text-sm text-gray-600">{currentUser.name}</span>
                 </div>
