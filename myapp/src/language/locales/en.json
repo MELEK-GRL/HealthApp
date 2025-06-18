@@ -20,5 +20,9 @@
     "loading": "Loading",
     "languageSelection": "Language Selection",
     "english": "English",
-    "turkish": "Turkish"
+    "turkish": "Turkish",
+    "role": "Role",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email"
 }

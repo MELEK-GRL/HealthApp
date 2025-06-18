@@ -20,5 +20,9 @@
     "loading": "Yükleniyor",
     "languageSelection": "Dil Seçimi",
     "english": "İngilizce",
-    "turkish": "Türkçe"
+    "turkish": "Türkçe",
+    "role": "Rol",
+    "name": "İsim",
+    "surname": "Soy İsim",
+    "email": "Email"
 }
