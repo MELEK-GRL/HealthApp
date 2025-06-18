@@ -18,7 +18,8 @@ export default function App() {
           <Route index element={<DirectiveList />} />
           <Route path="directive/:id" element={<DirectiveDetail />} />
           <Route path="settings" element={<Settings />} />
-          <Route path="user" element={<User />} />
+          <Route path="/app/user/:id" element={<User />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

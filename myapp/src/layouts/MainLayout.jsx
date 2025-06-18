@@ -2,17 +2,30 @@ import { Outlet } from "react-router-dom";
 import HamburgerMenu from "../components/HamburgerMenu";
 import { FaUserCircle } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchUserDirectly } from "../slice/userSlice";
 
 export default function MainLayout() {
     const { t } = useTranslation();
+    const dispatch = useDispatch();
+
+    const currentUser = useSelector(state => state.user.currentUser);
+    const userStatus = useSelector(state => state.user.status);
+
+    useEffect(() => {
+        if (!currentUser && userStatus === 'idle') {
+            dispatch(fetchUserDirectly());
+        }
+    }, [currentUser, userStatus, dispatch]);
+
     const menuItems = [
         { label: t("directiveList"), path: "/app" },
-        { label: t("profile"), path: "/app/user" },
+        ...(currentUser ? [{ label: t("profile"), path: `/app/user/${currentUser.id}` }] : []),
         { label: t("settings"), path: "/app/settings" },
         { label: t("logout"), path: "/" },
     ];
 
-    // Header ve footer yüksekliği (örnek 64px)
     const headerHeight = 64;
     const footerHeight = 64;
 
@@ -25,7 +38,7 @@ export default function MainLayout() {
                 <HamburgerMenu menuItems={menuItems} />
                 <div className="flex items-center gap-2 cursor-pointer select-none">
                     <FaUserCircle className="text-3xl" />
-                    <span className="text-sm font-medium">Melek Gürel</span>
+                    <span className="text-sm font-medium">{currentUser ? currentUser.name : "Misafir"}</span>
                 </div>
             </header>
 
