@@ -169,8 +169,8 @@ const DirectiveList = () => {
     return (
         <div className="p-4">
             {/* Arama ve tarih filtreleme alanı */}
-            <div className="grid gap-4 grid-cols-1 md:grid-cols-3 mb-6">
-                <div className="relative">
+            <div className="flex mb-6 lg:flex-row flex-col sm:justify-between justify-normal">
+                <div className="relative flex lg:w-[50%] w-full">
                     <FaSearch className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400" />
                     <input
                         type="text"
@@ -180,23 +180,25 @@ const DirectiveList = () => {
                         className="w-full pl-10 pr-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-sm"
                     />
                 </div>
-                <div className="relative">
-                    <FaCalendarAlt className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400" />
-                    <input
-                        type="date"
-                        value={startDate}
-                        onChange={(e) => setStartDate(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-sm"
-                    />
-                </div>
-                <div className="relative">
-                    <FaCalendarAlt className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400" />
-                    <input
-                        type="date"
-                        value={endDate}
-                        onChange={(e) => setEndDate(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-sm"
-                    />
+                <div className='flex gap-4 lg:mt-0 mt-4'>
+                    <div className="relative">
+                        <FaCalendarAlt className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400" />
+                        <input
+                            type="date"
+                            value={startDate}
+                            onChange={(e) => setStartDate(e.target.value)}
+                            className="w-full pl-10 pr-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-sm"
+                        />
+                    </div>
+                    <div className="relative">
+                        <FaCalendarAlt className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400" />
+                        <input
+                            type="date"
+                            value={endDate}
+                            onChange={(e) => setEndDate(e.target.value)}
+                            className="w-full pl-10 pr-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-sm"
+                        />
+                    </div>
                 </div>
             </div>
 
