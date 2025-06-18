@@ -40,15 +40,15 @@ const User = () => {
         <div className='flex flex-col'>
             <BackButton text={t('back')} onClick={() => navigate(-1)} />
             <div className="w-full sm:w-[70%] md:w-[50%] lg:w-[45%] xl:w-[35%] p-6 bg-white rounded shadow border border-slate-200">
-                <h1 className="text-2xl font-bold mb-4">Kullanıcı Detay</h1>
+                <h1 className="text-2xl font-bold mb-4">{t('profile') + ' ' + t('detail')}</h1>
                 <div className="mb-2">
-                    <span className="font-semibold">{t('name') + ' :'}</span> {currentUser.name}
+                    <span className="text-md text-gray-700 font-semibold">{t('name') + ' :'}</span > <span className="text-sm text-gray-600">{currentUser.name}</span>
                 </div>
                 <div className="mb-2">
-                    <span className="font-semibold">{t('email') + ' :'}</span> {currentUser.email}
+                    <span className="text-md text-gray-700 font-semibold">{t('email') + ' :'}</span > <span className="text-sm text-gray-600">{currentUser.email}</span>
                 </div>
                 <div className="mb-4">
-                    <span className="font-semibold">{t('role') + ' :'}</span> {currentUser.role || 'Bilinmiyor'}
+                    <span className="text-md text-gray-700 font-semibold">{t('role') + ' :'}</span > <span className="text-sm text-gray-600">{currentUser.role || 'Bilinmiyor'}</span>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@
     "required": "This field is required",
     "directiveList": "Directive List",
     "profile": "Profile",
+    "detail": "Detail",
     "settings": "Settings",
     "selectedFile": "Selected File",
     "send": "Send",
