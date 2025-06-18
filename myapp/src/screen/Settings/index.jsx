@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import BackButton from '../../components/Buttons/BackButton';
 
 const Settings = () => {
     const { t, i18n } = useTranslation();
     const [message, setMessage] = useState('');
     const [selectedLang, setSelectedLang] = useState(i18n.language || 'tr');
-
+    const navigate = useNavigate();
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
         setSelectedLang(lng);
@@ -25,7 +27,8 @@ const Settings = () => {
     }, [message]);
 
     return (
-        <div className="flex items-center  w-full py-4 ">
+        <div className="flex flex-col  w-full py-4 ">
+            <BackButton text={t('back')} onClick={() => navigate(-1)} />
             <div className="bg-white rounded-2xl shadow-md px-8 py-8  xl:w-[40%] lg:w-[50%] md:w-[60%] sm:w-[80%] w-full border border-slate-200 flex flex-col gap-4  ">
                 <div className=''>
                     <h2 className="text-2xl font-bold text-gray-800">{t('languageSelection')}</h2>

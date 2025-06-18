@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import Button from '../Buttons/Button';
 
 const PdfUploader = ({ directiveId }) => {
   const { t } = useTranslation();
@@ -109,15 +110,7 @@ const PdfUploader = ({ directiveId }) => {
       )}
 
       <div className='flex justify-center'>
-        <button
-          onClick={handleUpload}
-          disabled={isUploading || !file}
-          className={`mt-4 w-[200px] px-5 py-2 rounded text-white font-semibold
-          ${isUploading || !file ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
-          type="button"
-        >
-          {isUploading ? t('loading') : t('send')}
-        </button>
+        <Button text={isUploading ? t('loading') : t('send')} onClick={handleUpload} />
       </div>
     </div>
   );

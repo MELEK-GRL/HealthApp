@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import HamburgerMenu from "../components/HamburgerMenu";
 import { FaUserCircle } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
@@ -30,16 +30,18 @@ export default function MainLayout() {
     const footerHeight = 64;
 
     return (
-        <div className="flex flex-col min-h-screen ">
+        <div className="flex flex-col ">
             <header
-                className="bg-blue-600 text-white flex justify-between items-center globalScreen"
+                className="bg-blue-700 text-white flex justify-between items-center globalScreen"
                 style={{ height: `${headerHeight}px` }}
             >
                 <HamburgerMenu menuItems={menuItems} />
-                <div className="flex items-center gap-2 cursor-pointer select-none">
-                    <FaUserCircle className="text-3xl" />
-                    <span className="text-sm font-medium">{currentUser ? currentUser.name : "Misafir"}</span>
-                </div>
+                <Link to={currentUser ? `/app/user/${currentUser.id}` : "/"} >
+                    <div className="flex items-center gap-2 cursor-pointer select-none">
+                        <FaUserCircle className="text-3xl" />
+                        <span className="text-sm font-medium">{currentUser ? currentUser.name : "Misafir"}</span>
+                    </div>
+                </Link>
             </header>
 
             <main

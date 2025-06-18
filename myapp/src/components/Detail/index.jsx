@@ -11,7 +11,7 @@ const Detail = ({ id }) => {
 
     return (
         <div className='flex w-full'>
-            <div className="p-6 bg-white rounded-xl shadow-md mt-10 w-full border border-slate-100">
+            <div className="p-6 bg-white rounded-xl shadow-md  w-full border border-slate-100">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">
                     {directive.title}
                 </h2>
