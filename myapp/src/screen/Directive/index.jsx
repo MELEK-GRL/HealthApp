@@ -167,7 +167,7 @@ const DirectiveList = () => {
     }, [searchTerm, startDate, endDate]);
 
     return (
-        <div className="p-4">
+        <div className="relative">
             {/* Arama ve tarih filtreleme alanı */}
             <div className="flex mb-6 lg:flex-row flex-col sm:justify-between justify-normal">
                 <div className="relative flex lg:w-[50%] w-full">

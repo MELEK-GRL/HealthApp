@@ -16,16 +16,16 @@ const ListCard = ({ item }) => {
       </div>
 
       <div className="flex flex-col flex-grow">
-        <h3 className="text-sm font-semibold text-gray-800">{item.title}</h3>
+        <sapan className="text-sm font-semibold text-gray-800">{item.title}</sapan>
 
         <div className="flex items-center mt-1 text-sm text-gray-700">
           <FaUser className="text-blue-600 mr-1" size={12} />
-          <span className="truncate text-sm">{item.doctor}</span>
+          <span className="text-sm  text-gray-600 truncate">{item.doctor}</span>
         </div>
 
         <div className="flex justify-between mt-1 text-sm text-gray-600 w-full pr-6">
-          <span>{item.time}</span>
-          <span>{item.date}</span>
+          <span className="text-sm  text-gray-500">{item.time}</span>
+          <span className="text-sm  text-gray-500">{item.date}</span>
         </div>
       </div>
     </div>
