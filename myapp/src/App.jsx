@@ -9,7 +9,7 @@ import DirectiveDetail from "./screen/Directive/DirectiveDetail";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/HealthApp">
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
