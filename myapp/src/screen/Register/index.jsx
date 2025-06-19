@@ -14,7 +14,6 @@ const Register = () => {
             setError('Şifreler eşleşmiyor!');
             return;
         }
-
         setError('');
         // Kayıt işlemi burada yapılabilir
         alert(`Kayıt: ${username} / ${password}`);
